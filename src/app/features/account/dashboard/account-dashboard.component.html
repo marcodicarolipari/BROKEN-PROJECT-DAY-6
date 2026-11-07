@@ -1,0 +1,50 @@
+<div class="account-dashboard">
+
+  @if (account; as acc) {
+    <!-- Scheda saldo -->
+    <div class="balance-card">
+      <h2>Conto Corrente</h2>
+      <div class="balance">
+        {{ acc.balance | currency: acc.currency : 'symbol' : '1.2-2' : 'it-IT' }}
+      </div>
+      <div class="owner">Intestato a: {{ acc.ownerName }}</div>
+      <div style="font-size:12px; opacity:0.7; margin-top:6px;">{{ acc.iban }}</div>
+      
+      <!-- Pulsanti di modifica -->
+      <div class="edit-actions" style="margin-top: 16px; display: flex; gap: 8px;">
+        @if (!isEditing()) {
+          <button (click)="toggleEditMode()" class="btn btn-primary">
+            ✏️ Modifica profilo
+          </button>
+        } @else {
+          <button (click)="saveChanges()" class="btn btn-success">
+            💾 Salva
+          </button>
+          <button (click)="cancelEdit()" class="btn btn-secondary">
+            ❌ Annulla
+          </button>
+          <span style="color: var(--text-secondary); align-self: center; font-size: 12px;">
+            Modalità modifica attiva
+          </span>
+        }
+      </div>
+    </div>
+
+    <!-- Tab di navigazione verso le sub-route -->
+    <div class="nav-tabs">
+      <a
+        routerLink="movimenti"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        📋 Movimenti
+      </a>
+    </div>
+  } @else {
+    <p style="text-align:center; color: var(--text-secondary); padding: 48px 0;">
+      Caricamento dati conto...
+    </p>
+  }
+
+  <router-outlet></router-outlet>
+</div>

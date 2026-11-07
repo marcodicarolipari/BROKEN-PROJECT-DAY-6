@@ -1,0 +1,80 @@
+# Dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Compiled output
+dist
+tmp
+out-tsc
+bazel-out
+
+# Angular specific
+.angular
+.ng
+
+# IDE
+.idea
+.project
+.classpath
+.c9
+*.launch
+.settings
+*.sublime-workspace
+
+# VS Code
+.vscode
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# Visual Studio
+.vs
+.suo
+.user
+.sln.docstates
+*.csproj.user
+
+# Mac
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build directories
+build
+.cache
+.output
+
+# Testing
+coverage
+karma.conf.js
+
+# Logs
+logs
+*.log
+
+# OS
+Thumbs.db
+.directory
+
+# Local development
+.netlify
+.vercel
+.now
+
+# Temp files
+*.swp
+*.swo
+*~
+.tmp
+tmp/
+
+# System files
+.AppleDouble
+.LSOverride
+*.pem
